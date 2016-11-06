@@ -17,6 +17,17 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
 
+    //draws path
+    ctx.fillStyle = "#b4b3b8";
+    ctx.beginPath();
+    ctx.moveTo(92, 361);
+    ctx.lineTo(144, 336);
+    ctx.lineTo(172, 355);
+    ctx.lineTo(120, 380);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+
     //draws street
     ctx.strokeStyle = "#71726d";
     ctx.fillStyle = "#71726d";
@@ -71,7 +82,7 @@ function drawMe() {
     ctx.stroke();
 
     //front of chimney
-    ctx.fillStyle = "#fcfef9";
+    ctx.fillStyle = "#cb95ad";
     ctx.beginPath();
     ctx.moveTo(234, 132);
     ctx.lineTo(234, 169);
@@ -82,7 +93,7 @@ function drawMe() {
     ctx.fill();
 
     //side of chimney
-    ctx.fillStyle = "#9d9a95";
+    ctx.fillStyle = "#a2768a";
     ctx.beginPath();
     ctx.moveTo(255, 146);
     ctx.lineTo(255, 159);
@@ -103,4 +114,80 @@ function drawMe() {
     ctx.stroke();    
     ctx.fill();
 
+    //inside of chimney
+    ctx.fillStyle = "#494347";
+    ctx.beginPath();
+    ctx.moveTo(241, 133);
+    ctx.lineTo(257, 125);
+    ctx.lineTo(271, 134);
+    ctx.lineTo(256, 142);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+
+    //draws door
+    ctx.fillStyle = "#955b0e";
+    ctx.beginPath();
+    ctx.moveTo(145, 337);
+    ctx.lineTo(145, 277);
+    ctx.lineTo(170, 293);
+    ctx.lineTo(170, 353);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+
+    ctx.strokeStyle = "#e8e4e9";
+    ctx.lineWidth = 3;
+
+    //draws door trim
+    ctx.beginPath();
+    ctx.moveTo(145, 338);
+    ctx.lineTo(145, 277);
+    ctx.lineTo(170, 293);
+    ctx.lineTo(170, 354);
+    ctx.stroke();
+
+    //draws front lower window
+    ctx.fillStyle = "#b1d7fd";
+    ctx.beginPath();
+    ctx.moveTo(195, 340);
+    ctx.lineTo(195, 310);
+    ctx.lineTo(233, 335);
+    ctx.lineTo(233, 365);
+    ctx.closePath();    
+    ctx.fill();
+    ctx.stroke();
+
+    //draws front top window
+    ctx.fillStyle = "#b1d7fd";
+    ctx.beginPath();
+    ctx.moveTo(170, 256);
+    ctx.lineTo(170, 226);
+    ctx.lineTo(208, 251);
+    ctx.lineTo(208, 281);
+    ctx.closePath();   
+    ctx.fill();
+    ctx.stroke();
+
+    //draws first side window
+    ctx.fillStyle = "#b1d7fd";
+    ctx.beginPath();
+    ctx.moveTo(269, 337);
+    ctx.lineTo(269, 367);
+    ctx.lineTo(316, 344);
+    ctx.lineTo(316, 314);
+    ctx.closePath();    
+    ctx.fill();
+    ctx.stroke();
+
+    //draws second side window
+    ctx.fillStyle = "#b1d7fd";
+    ctx.beginPath();
+    ctx.moveTo(347, 299);
+    ctx.lineTo(347, 329);
+    ctx.lineTo(395, 305);
+    ctx.lineTo(395, 275);
+    ctx.closePath();    
+    ctx.fill();
+    ctx.stroke();
 }
