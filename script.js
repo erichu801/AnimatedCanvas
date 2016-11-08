@@ -84,10 +84,10 @@ function drawMe() {
     //front of chimney
     ctx.fillStyle = "#cb95ad";
     ctx.beginPath();
-    ctx.moveTo(234, 132);
+    ctx.moveTo(234, 123);
     ctx.lineTo(234, 169);
     ctx.lineTo(255, 159);
-    ctx.lineTo(255, 146);
+    ctx.lineTo(255, 137);
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
@@ -95,10 +95,10 @@ function drawMe() {
     //side of chimney
     ctx.fillStyle = "#a2768a";
     ctx.beginPath();
-    ctx.moveTo(255, 146);
+    ctx.moveTo(255, 137);
     ctx.lineTo(255, 159);
     ctx.lineTo(278, 148);
-    ctx.lineTo(278, 135);
+    ctx.lineTo(278, 126);
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
@@ -106,10 +106,10 @@ function drawMe() {
     //top of chimney
     ctx.fillStyle = "#9d9a95";
     ctx.beginPath();
-    ctx.moveTo(234, 132);
-    ctx.lineTo(255, 146);
-    ctx.lineTo(278, 135);
-    ctx.lineTo(257, 121);
+    ctx.moveTo(234, 123);
+    ctx.lineTo(255, 137);
+    ctx.lineTo(278, 126);
+    ctx.lineTo(257, 112);
     ctx.closePath();
     ctx.stroke();    
     ctx.fill();
@@ -117,10 +117,10 @@ function drawMe() {
     //inside of chimney
     ctx.fillStyle = "#494347";
     ctx.beginPath();
-    ctx.moveTo(241, 133);
-    ctx.lineTo(257, 125);
-    ctx.lineTo(271, 134);
-    ctx.lineTo(256, 142);
+    ctx.moveTo(241, 124);
+    ctx.lineTo(257, 116);
+    ctx.lineTo(271, 125);
+    ctx.lineTo(256, 133);
     ctx.closePath();
     ctx.stroke();    
     ctx.fill();
@@ -190,4 +190,37 @@ function drawMe() {
     ctx.closePath();    
     ctx.fill();
     ctx.stroke();
+
+    //draws smoke
+    ctx.strokeStyle = "#f2f2f2";
+    ctx.fillStyle = "#f2f2f2";
+    ctx.beginPath();
+    ctx.arc(253, 80, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(245, 83, 4, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(245, 92, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(252, 93, 6, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(260, 91, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(259, 84, 4, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+}
+
+function drawSmoke() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
 }
