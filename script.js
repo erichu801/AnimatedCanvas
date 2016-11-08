@@ -1,5 +1,5 @@
 var altitude = 0;
-var smokeSize = 1;
+var smokeSize = 0;
 
 function drawMe() {
     var canvas = document.getElementById("myCanvas");
@@ -242,6 +242,6 @@ function animateSmoke() {
     //Reset smoke stats if its outside of the canvas
     if (altitude > 140) {
         altitude = 0;
-        smokeSize = 0
+        smokeSize = 0;
     }
 }
