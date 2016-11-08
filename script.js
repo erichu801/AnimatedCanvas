@@ -1,3 +1,6 @@
+var altitude = 0;
+var smokeSize = 1;
+
 function drawMe() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -190,37 +193,55 @@ function drawMe() {
     ctx.closePath();    
     ctx.fill();
     ctx.stroke();
+    
+    //animate smoke
+    var interval = setInterval(animateSmoke, 50);
+}
 
+function animateSmoke() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    //Clear previous rectangle perform the smoke animation
+    ctx.clearRect(0, 0, ctx.canvas.width, 108);
+    ctx.fillStyle = "#749034";
+    ctx.fillRect(0, 0, canvas.width, 108);
+    
     //draws smoke
     ctx.strokeStyle = "#f2f2f2";
     ctx.fillStyle = "#f2f2f2";
     ctx.beginPath();
-    ctx.arc(253, 80, 5, 0, 2 * Math.PI);
+    ctx.arc(253, (80 - altitude), (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(245, 83, 4, 0, 2 * Math.PI);
+    ctx.arc(245, 83 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(245, 92, 5, 0, 2 * Math.PI);
+    ctx.arc(245, 92 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(252, 93, 6, 0, 2 * Math.PI);
+    ctx.arc(252, 93 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(260, 91, 5, 0, 2 * Math.PI);
+    ctx.arc(260, 91 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(259, 84, 4, 0, 2 * Math.PI);
+    ctx.arc(259, 84 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
-}
-
-function drawSmoke() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
+    
+    //Update smoke altitude and size
+    altitude += 5;
+    smokeSize += 0.22;
+    
+    //Reset smoke stats if its outside of the canvas
+    if (altitude > 140) {
+        altitude = 0;
+        smokeSize = 0
+    }
 }
