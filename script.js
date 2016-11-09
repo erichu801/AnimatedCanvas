@@ -1,5 +1,12 @@
 var altitude = 0;
+var rate = 5;
 var smokeSize = 0;
+
+function useSlider() {
+    rate = document.getElementById("slider").value; 
+    document.getElementById("demo").innerHTML = rate;
+
+}
 
 function drawMe() {
     var canvas = document.getElementById("myCanvas");
@@ -194,11 +201,15 @@ function drawMe() {
     ctx.fill();
     ctx.stroke();
     
-    //animate smoke
-    var interval = setInterval(animateSmoke, 50);
+    animateSmoke();
 }
 
 function animateSmoke() {
+    //animate smoke
+    var interval = setInterval(drawSmoke, 50);
+}
+
+function drawSmoke() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     
@@ -208,36 +219,36 @@ function animateSmoke() {
     ctx.fillRect(0, 0, canvas.width, 108);
     
     //draws smoke
-    ctx.strokeStyle = "#f2f2f2";
-    ctx.fillStyle = "#f2f2f2";
+    ctx.strokeStyle = "rgb(242,242,242)";
+    ctx.fillStyle = "rgb(242,242,242)";
     ctx.beginPath();
-    ctx.arc(253, (94 - altitude), (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(253, 90 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(245, 97 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(243, 95 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(245, 106 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(243, 106 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(252, 108 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(255, 107 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(260, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(265, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(259, 98- altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(262, 93 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     
     //Update smoke altitude and size
-    altitude += 5;
-    smokeSize += 0.22;
+    altitude  = altitude + (rate / 10);
+    smokeSize += 0.20;
     
     //Reset smoke stats if its outside of the canvas
     if (altitude > 140) {
