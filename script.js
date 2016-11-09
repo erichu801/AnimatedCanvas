@@ -1,5 +1,5 @@
 var altitude = 0;
-var rate = 5;
+var rate = 50;
 var smokeSize = 0;
 
 function useSlider() {
@@ -247,8 +247,13 @@ function drawSmoke() {
     ctx.stroke();
     
     //Update smoke altitude and size
-    altitude  = altitude + (rate / 10);
-    smokeSize += 0.20;
+    altitude  = altitude + 5;
+    if (smokeSize < 1.6) {
+        smokeSize += 0.20;
+    } else {
+        smokeSize = 1.6;
+    }
+    
     
     //Reset smoke stats if its outside of the canvas
     if (altitude > 140) {
