@@ -48,10 +48,10 @@ function drawSmoke() {
     
     //Update smoke altitude and size
     altitude  = altitude + (rate / 1.3);
-    if (smokeSize < 1.6) {
+    if (smokeSize < 2) {
         smokeSize += 0.20;
     } else {
-        smokeSize = 1.6;
+        smokeSize = 2;
     }   
     
     //Reset smoke stats if its outside of the canvas
