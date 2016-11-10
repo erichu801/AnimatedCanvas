@@ -9,14 +9,6 @@ function useSlider() {
     document.getElementById("demo").innerHTML = rate;
 }
 
-
-/*
-function animateSmoke() {
-    //animate smoke
-    
-}
-*/
-
 function drawSmoke() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
