@@ -7,7 +7,66 @@ function useSlider() {
     rate = document.getElementById("slider").value; 
     //prints rate on screen
     document.getElementById("demo").innerHTML = rate;
+}
 
+
+/*
+function animateSmoke() {
+    //animate smoke
+    
+}
+*/
+
+function drawSmoke() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    //Clear previous rectangle perform the smoke animation
+    ctx.clearRect(0, 0, ctx.canvas.width, 108);
+    ctx.fillStyle = "#749034";
+    ctx.fillRect(0, 0, canvas.width, 108);
+    
+    //draws smoke
+    ctx.strokeStyle = "rgb(242,242,242)";
+    ctx.fillStyle = "rgb(242,242,242)";
+    ctx.beginPath();
+    ctx.arc(253, 90 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(243, 95 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(243, 106 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(255, 107 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(265, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(262, 93 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    
+    //Update smoke altitude and size
+    altitude  = altitude + (rate / 1.3);
+    if (smokeSize < 1.6) {
+        smokeSize += 0.20;
+    } else {
+        smokeSize = 1.6;
+    }   
+    
+    //Reset smoke stats if its outside of the canvas
+    if (altitude > 140) {
+        altitude = 0;
+        smokeSize = 0;
+    }
 }
 
 function drawMe() {
@@ -203,62 +262,6 @@ function drawMe() {
     ctx.fill();
     ctx.stroke();
     
-    animateSmoke();
-}
-
-function animateSmoke() {
-    //animate smoke
     var interval = setInterval(drawSmoke, 50);
 }
 
-function drawSmoke() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    
-    //Clear previous rectangle perform the smoke animation
-    ctx.clearRect(0, 0, ctx.canvas.width, 108);
-    ctx.fillStyle = "#749034";
-    ctx.fillRect(0, 0, canvas.width, 108);
-    
-    //draws smoke
-    ctx.strokeStyle = "rgb(242,242,242)";
-    ctx.fillStyle = "rgb(242,242,242)";
-    ctx.beginPath();
-    ctx.arc(253, 90 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(243, 95 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(243, 106 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(255, 107 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(265, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(262, 93 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    
-    //Update smoke altitude and size
-    altitude  = altitude + (rate / 1.3);
-    if (smokeSize < 1.6) {
-        smokeSize += 0.20;
-    } else {
-        smokeSize = 1.6;
-    }   
-    
-    //Reset smoke stats if its outside of the canvas
-    if (altitude > 140) {
-        altitude = 0;
-        smokeSize = 0;
-    }
-}
