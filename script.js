@@ -5,8 +5,6 @@ var smokeSize = 0;
 function useSlider() {
     //update rate when changed
     rate = document.getElementById("slider").value; 
-    //prints rate on screen
-    document.getElementById("demo").innerHTML = rate;
 }
 
 function drawSmoke() {

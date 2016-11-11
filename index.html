@@ -4,12 +4,26 @@
         <meta charset="utf-8" />
         <title>Hu, Yi &amp; Starzynski, Victor</title>
         <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="styles.css" />
     </head>
-    <body onLoad="drawMe(), useSlider()">
+    <body onLoad="drawMe(), slider()">
         <canvas id="myCanvas" width="500" height="500"></canvas>
+
+        <div id="readMe">
+            <p>Victor Starzynski - </p>
+            <p>Yi Hu - A00984829 - yhu66@my.bcit.ca</p>
+            <p>Set C</p>
+            <br />
+            <p>Completion Status:</p>
+            <p>All webpages are complete.</p>
+            <p>Nothing incomplete.</p>
+            <br />
+            <p>Major Challenges:</p>
+            <p>Using range input to control the speed of the smoke. </p>
+        </div>
+
         <form>
             <input type="range" value="5" min="1" max="10" id="slider" onChange="useSlider()" />
         </form>
-        <p>Rate: <span id="demo"></span></p>
     </body>
 </html>
