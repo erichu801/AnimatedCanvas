@@ -14,35 +14,35 @@ function drawSmoke() {
     var ctx = canvas.getContext("2d");
     
     //Clear previous rectangle perform the smoke animation
-    ctx.clearRect(0, 0, ctx.canvas.width, 108);
+    ctx.clearRect(0, 0, ctx.canvas.width, 112);
     ctx.fillStyle = "#749034";
-    ctx.fillRect(0, 0, canvas.width, 108);
+    ctx.fillRect(0, 0, canvas.width, 112);
     
     //draws smoke
     ctx.strokeStyle = "rgb(242,242,242)";
     ctx.fillStyle = "rgb(242,242,242)";
     ctx.beginPath();
-    ctx.arc(253, 90 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(253, 89 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(243, 95 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(243, 94 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(243, 106 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(243, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(255, 107 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(255, 106 - altitude, (6 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(265, 105 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(265, 104 - altitude, (5 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(262, 93 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
+    ctx.arc(262, 92 - altitude, (4 * smokeSize), 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
     
