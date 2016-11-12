@@ -5,6 +5,7 @@ var smokeSize = 0;
 function drawMe() {
     drawBackground();
     drawRoad();
+    drawHedge();
     drawHouse();
 
     var interval = setInterval(drawSmoke, 50);
@@ -206,10 +207,10 @@ function drawHouse() {
     //Draws door
     ctx.fillStyle = "#955b0e";
     ctx.beginPath();
-    ctx.moveTo(145, 337);
-    ctx.lineTo(145, 277);
-    ctx.lineTo(170, 293);
-    ctx.lineTo(170, 353);
+    ctx.moveTo(145, 329);
+    ctx.lineTo(145, 269);
+    ctx.lineTo(170, 285);
+    ctx.lineTo(170, 345);
     ctx.closePath();
     ctx.stroke();    
     ctx.fill();
@@ -219,10 +220,10 @@ function drawHouse() {
 
     //Draws door trim
     ctx.beginPath();
-    ctx.moveTo(145, 338);
-    ctx.lineTo(145, 277);
-    ctx.lineTo(170, 293);
-    ctx.lineTo(170, 354);
+    ctx.moveTo(145, 330);
+    ctx.lineTo(145, 269);
+    ctx.lineTo(170, 285);
+    ctx.lineTo(170, 346);
     ctx.stroke();
 
     //Draws front lower window
@@ -268,4 +269,136 @@ function drawHouse() {
     ctx.closePath();    
     ctx.fill();
     ctx.stroke();
+
+    ctx.lineWidth = 1;
+
+    //Draws top of door steps
+    ctx.strokeStyle = "#000";
+    ctx.fillStyle = "#b4b3b8";
+    ctx.beginPath();
+    ctx.moveTo(135, 332);
+    ctx.lineTo(144, 328);
+    ctx.lineTo(172, 347);
+    ctx.lineTo(163, 351);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+
+    //Draws side of door steps
+    ctx.strokeStyle = "#000";
+    ctx.fillStyle = "#81807b";
+    ctx.beginPath();
+    ctx.moveTo(163, 351);
+    ctx.lineTo(172, 347);
+    ctx.lineTo(172, 355);
+    ctx.lineTo(163, 359);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+
+    //Draws front of door steps
+    ctx.strokeStyle = "#000";
+    ctx.fillStyle = "#9d9a95";
+    ctx.beginPath();
+    ctx.moveTo(135, 332);
+    ctx.lineTo(163, 351);
+    ctx.lineTo(163, 359);
+    ctx.lineTo(135, 340);
+    ctx.closePath();
+    ctx.stroke();    
+    ctx.fill();
+}
+
+function drawHedge() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    ctx.strokeStyle = "black";
+
+    //Draws front of hedge on near side front yard
+    ctx.fillStyle = "#528921";
+    ctx.beginPath();
+    ctx.moveTo(120, 362);
+    ctx.lineTo(245, 446);
+    ctx.lineTo(245, 463);
+    ctx.lineTo(120, 380);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws front of hedge on far side front yard
+    ctx.fillStyle = "#528921";
+    ctx.beginPath();
+    ctx.moveTo(20, 296);
+    ctx.lineTo(92, 344);
+    ctx.lineTo(92, 361);
+    ctx.lineTo(20, 313);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws front of hedge on back yard
+    ctx.fillStyle = "#528921";
+    ctx.beginPath();
+    ctx.moveTo(411, 272);
+    ctx.lineTo(486, 321);
+    ctx.lineTo(471, 329);
+    ctx.lineTo(411, 289);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws side of hedge on near side
+    ctx.fillStyle = "#3d631a";
+    ctx.beginPath();
+    ctx.moveTo(245, 446);
+    ctx.lineTo(497, 322);
+    ctx.lineTo(497, 339);
+    ctx.lineTo(245, 463);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws side of hedge on path side
+    ctx.fillStyle = "#3d631a";
+    ctx.beginPath();
+    ctx.moveTo(92, 344);
+    ctx.lineTo(98, 340);
+    ctx.lineTo(98, 358);
+    ctx.lineTo(92, 361);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws side of hedge on far side
+    ctx.fillStyle = "#3d631a";
+    ctx.beginPath();
+    ctx.moveTo(33, 297);
+    ctx.lineTo(129, 250);
+    ctx.lineTo(129, 268);
+    ctx.lineTo(48, 307);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+    //Draws top of hedge
+    ctx.fillStyle = "#76a547";
+    ctx.beginPath();
+    ctx.moveTo(120, 362);
+    ctx.lineTo(127, 359);
+    ctx.lineTo(245, 438);
+    ctx.lineTo(486, 321);
+    ctx.lineTo(411, 272);
+    ctx.lineTo(129, 250);
+    ctx.lineTo(33, 297);
+    ctx.lineTo(98, 340);
+    ctx.lineTo(92, 344);
+    ctx.lineTo(20, 296);
+    ctx.lineTo(129, 243);
+    ctx.lineTo(411, 264);
+    ctx.lineTo(498, 322);
+    ctx.lineTo(245, 446);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
 }
