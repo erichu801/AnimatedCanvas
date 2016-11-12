@@ -2,8 +2,16 @@ var altitude = 0;
 var rate = 5;
 var smokeSize = 0;
 
+function drawMe() {
+    drawBackground();
+    drawRoad();
+    drawHouse();
+
+    var interval = setInterval(drawSmoke, 50);
+}
+
 function useSlider() {
-    //update rate when changed
+    //Update rate when changed
     rate = document.getElementById("slider").value; 
 }
 
@@ -11,12 +19,12 @@ function drawSmoke() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     
-    //Clear previous rectangle perform the smoke animation
+    //Clears previous rectangle and performs the smoke animation
     ctx.clearRect(0, 0, ctx.canvas.width, 112);
     ctx.fillStyle = "#749034";
     ctx.fillRect(0, 0, canvas.width, 112);
     
-    //draws smoke
+    //Draws smoke
     ctx.strokeStyle = "rgb(242,242,242)";
     ctx.fillStyle = "rgb(242,242,242)";
     ctx.beginPath();
@@ -59,15 +67,19 @@ function drawSmoke() {
     }
 }
 
-function drawMe() {
+function drawBackground() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    //draws background
     ctx.fillStyle = "#749034";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 
-    //draws sidewalk
+function drawRoad() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    //Draws sidewalk
     ctx.strokeStyle = "#b4b3b8";
     ctx.fillStyle = "#b4b3b8";
     ctx.beginPath();
@@ -78,7 +90,7 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
 
-    //draws path
+    //Draws path to house
     ctx.fillStyle = "#b4b3b8";
     ctx.beginPath();
     ctx.moveTo(92, 361);
@@ -89,7 +101,7 @@ function drawMe() {
     ctx.stroke();    
     ctx.fill();
 
-    //draws street
+    //Draws street
     ctx.strokeStyle = "#71726d";
     ctx.fillStyle = "#71726d";
     ctx.beginPath();
@@ -99,10 +111,15 @@ function drawMe() {
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
+}
+
+function drawHouse() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
     
     ctx.strokeStyle = "black";
 
-    //front of house
+    //Draws front of house
     ctx.fillStyle = "#cb95ad";
     ctx.beginPath();
     ctx.moveTo(250, 306);
@@ -114,7 +131,7 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
     
-    //side of house
+    //Draws side of house
     ctx.fillStyle = "#a2768a";
     ctx.beginPath();
     ctx.moveTo(250, 306);
@@ -125,7 +142,7 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
     
-    //roof
+    //Draws roof
     ctx.fillStyle = "#7a706f";
     ctx.beginPath();
     ctx.moveTo(189, 191);
@@ -142,7 +159,7 @@ function drawMe() {
     ctx.closePath();
     ctx.stroke();
 
-    //front of chimney
+    //Draws front of chimney
     ctx.fillStyle = "#cb95ad";
     ctx.beginPath();
     ctx.moveTo(234, 123);
@@ -153,7 +170,7 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
 
-    //side of chimney
+    //Draws side of chimney
     ctx.fillStyle = "#a2768a";
     ctx.beginPath();
     ctx.moveTo(255, 137);
@@ -164,7 +181,7 @@ function drawMe() {
     ctx.stroke();
     ctx.fill();
 
-    //top of chimney
+    //Draws top of chimney
     ctx.fillStyle = "#9d9a95";
     ctx.beginPath();
     ctx.moveTo(234, 123);
@@ -175,7 +192,7 @@ function drawMe() {
     ctx.stroke();    
     ctx.fill();
 
-    //inside of chimney
+    //Draws inside of chimney
     ctx.fillStyle = "#494347";
     ctx.beginPath();
     ctx.moveTo(241, 124);
@@ -186,7 +203,7 @@ function drawMe() {
     ctx.stroke();    
     ctx.fill();
 
-    //draws door
+    //Draws door
     ctx.fillStyle = "#955b0e";
     ctx.beginPath();
     ctx.moveTo(145, 337);
@@ -200,7 +217,7 @@ function drawMe() {
     ctx.strokeStyle = "#e8e4e9";
     ctx.lineWidth = 3;
 
-    //draws door trim
+    //Draws door trim
     ctx.beginPath();
     ctx.moveTo(145, 338);
     ctx.lineTo(145, 277);
@@ -208,7 +225,7 @@ function drawMe() {
     ctx.lineTo(170, 354);
     ctx.stroke();
 
-    //draws front lower window
+    //Draws front lower window
     ctx.fillStyle = "#b1d7fd";
     ctx.beginPath();
     ctx.moveTo(195, 340);
@@ -219,7 +236,7 @@ function drawMe() {
     ctx.fill();
     ctx.stroke();
 
-    //draws front top window
+    //Draws front top window
     ctx.fillStyle = "#b1d7fd";
     ctx.beginPath();
     ctx.moveTo(170, 256);
@@ -230,7 +247,7 @@ function drawMe() {
     ctx.fill();
     ctx.stroke();
 
-    //draws first side window
+    //Draws first side window
     ctx.fillStyle = "#b1d7fd";
     ctx.beginPath();
     ctx.moveTo(269, 337);
@@ -241,7 +258,7 @@ function drawMe() {
     ctx.fill();
     ctx.stroke();
 
-    //draws second side window
+    //Draws second side window
     ctx.fillStyle = "#b1d7fd";
     ctx.beginPath();
     ctx.moveTo(347, 299);
@@ -251,7 +268,4 @@ function drawMe() {
     ctx.closePath();    
     ctx.fill();
     ctx.stroke();
-    
-    var interval = setInterval(drawSmoke, 50);
 }
-
