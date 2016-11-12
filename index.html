@@ -7,9 +7,11 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body onLoad="drawMe(), slider()">
-        <canvas id="myCanvas" width="500" height="500"></canvas>
-
         <div id="readMe">
+            <canvas id="myCanvas" width="500" height="500"></canvas>
+            <form>
+                <input type="range" value="5" min="1" max="10" id="slider" onChange="useSlider()" />
+            </form>
             <p>Victor Starzynski - </p>
             <p>Yi Hu - A00984829 - yhu66@my.bcit.ca</p>
             <p>Set C</p>
@@ -22,8 +24,6 @@
             <p>Using range input to control the speed of the smoke. </p>
         </div>
 
-        <form>
-            <input type="range" value="5" min="1" max="10" id="slider" onChange="useSlider()" />
-        </form>
+
     </body>
 </html>
