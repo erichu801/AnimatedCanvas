@@ -21,29 +21,30 @@ header h1 {
 }
 
 .readMe {
-    position: absolute;
-    top: 100px;
+    position: relative;
+    bottom: 500px;
     left: 800px;
 }
 
 #slider {
-    position: absolute;
-    left: 185px;
+    position: relative;
+    left: 130px;
+    top: 5px;
 }
 
 #slowLabel {
-    position: absolute;
+    position: relative;
     left: 110px;
 }
 
 #fastLabel {
-    position: absolute;
-    left: 335px;
+    position: relative;
+    left: 145px;
 }
 
 footer {
     position: relative;
-    top: 45px;
+    bottom: 380px;
     float: right;
     font-weight: bold;
     font-size: small;
